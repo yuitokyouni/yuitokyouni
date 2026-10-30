@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="360" viewBox="0 0 1040 360" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">From agent decisions to market impact</title>
+  <desc id="desc">A conceptual research loop: heterogeneous agents submit orders to a C++ order book. Price increases upward: amber sell asks occupy higher prices, mint buy bids occupy lower prices, and the spread separates the best ask from the best bid. Matching produces trades and financial time series; market impact is measured to compare execution policies and update agent rules. All plotted curves are illustrative, not empirical results.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M1 1 7 4 1 7" stroke="#83ddd6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; }
+    .heading { fill: #edf5f6; font-size: 24px; font-weight: 650; }
+    .step { fill: #99b8ca; font-size: 12px; font-weight: 650; letter-spacing: 1.4px; }
+    .label { fill: #edf5f6; font-size: 20px; font-weight: 600; }
+    .caption { fill: #b9cfda; font-size: 13px; }
+    .flow { stroke-dasharray: 4 7; animation: flow 2.2s linear infinite; }
+    .pulse { animation: pulse 4s ease-in-out infinite; }
+    .delay { animation-delay: -2s; }
+    @keyframes flow { to { stroke-dashoffset: -22; } }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .55; } }
+    @media (prefers-reduced-motion: reduce) { .flow, .pulse { animation: none; } }
+  </style>
+
+  <rect width="1040" height="360" rx="20" fill="#142331"/>
+  <text x="28" y="43" class="heading">From agent decisions to market impact</text>
+  <rect x="820" y="23" width="192" height="28" rx="14" fill="#243c4d"/>
+  <text x="916" y="42" text-anchor="middle" class="caption">Conceptual research loop</text>
+
+  <g fill="#1d3447" stroke="#365166">
+    <rect x="28" y="76" width="226" height="207" rx="14"/>
+    <rect x="282" y="76" width="226" height="207" rx="14"/>
+    <rect x="536" y="76" width="226" height="207" rx="14"/>
+    <rect x="790" y="76" width="226" height="207" rx="14"/>
+  </g>
+  <g stroke="#83ddd6" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M258 173H277"/>
+    <path d="M512 173H531"/>
+    <path d="M766 173H785"/>
+  </g>
+
+  <text x="46" y="103" class="step">01 · AGENTS</text>
+  <g stroke="#55798c" stroke-width="2">
+    <path d="m80 144 55 31 53-39M135 175l-40 29m40-29 53 25m-108-56 15 60m93-68v64"/>
+    <path d="m80 144 108-8M95 204l93-4" stroke-dasharray="3 5"/>
+  </g>
+  <g stroke="#142331" stroke-width="3">
+    <circle cx="80" cy="144" r="12" fill="#83ddd6" class="pulse"/>
+    <circle cx="135" cy="175" r="15" fill="#edf5f6"/>
+    <circle cx="188" cy="136" r="10" fill="#f3c868"/>
+    <circle cx="95" cy="204" r="9" fill="#99b8ca"/>
+    <circle cx="188" cy="200" r="13" fill="#83ddd6" class="pulse delay"/>
+  </g>
+  <text x="46" y="242" class="label">Diverse agents</text>
+  <text x="46" y="264" class="caption">Rules · beliefs · interactions</text>
+
+  <text x="300" y="103" class="step">02 · MATCHING</text>
+  <text x="395" y="122" text-anchor="middle" fill="#b9cfda" font-size="10">PRICE</text>
+  <g stroke="#99b8ca" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M395 212V128m-4 5 4-5 4 5"/>
+  </g>
+  <g stroke="#55798c" stroke-width="1" stroke-dasharray="3 4">
+    <path d="M389 151h88M389 187h88"/>
+  </g>
+  <text x="309" y="145" fill="#f3c868" font-size="12" font-weight="600">SELL / ASK</text>
+  <g fill="#f3c868">
+    <rect x="405" y="133" width="56" height="8" rx="2"/>
+    <rect x="405" y="147" width="37" height="8" rx="2"/>
+  </g>
+  <text x="416" y="205" fill="#83ddd6" font-size="12" font-weight="600">BUY / BID</text>
+  <g fill="#83ddd6">
+    <rect x="341" y="183" width="44" height="8" rx="2"/>
+    <rect x="318" y="197" width="67" height="8" rx="2"/>
+  </g>
+  <path d="M478 151h6v36h-6" stroke="#b9cfda" stroke-width="1.2" stroke-linecap="round"/>
+  <text x="437" y="173" text-anchor="middle" fill="#edf5f6" font-size="12">spread</text>
+  <text x="300" y="242" class="label">C++ order book</text>
+  <text x="300" y="264" class="caption">Bid · ask · spread → trades</text>
+
+  <text x="554" y="103" class="step">03 · TIME SERIES</text>
+  <g stroke="#55798c" stroke-width="1">
+    <path d="M560 124v88h178M560 147h178m-178 32h178"/>
+  </g>
+  <path d="m564 184 12-8 10 11 12-24 11 8 11-16 10 8 11-19 11 29 11-9 11 31 12-9 10-34 11 12 14-24"
+        stroke="#83ddd6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#7b9daf" opacity=".7">
+    <rect x="569" y="199" width="8" height="12"/>
+    <rect x="587" y="194" width="8" height="17"/>
+    <rect x="605" y="201" width="8" height="10"/>
+    <rect x="623" y="193" width="8" height="18"/>
+    <rect x="641" y="199" width="8" height="12"/>
+    <rect x="659" y="189" width="8" height="22"/>
+    <rect x="677" y="202" width="8" height="9"/>
+    <rect x="695" y="196" width="8" height="15"/>
+    <rect x="713" y="200" width="8" height="11"/>
+  </g>
+  <text x="554" y="242" class="label">Prices &amp; liquidity</text>
+  <text x="554" y="264" class="caption">Returns · volatility · order flow</text>
+
+  <text x="808" y="103" class="step">04 · MARKET IMPACT</text>
+  <g stroke="#55798c" stroke-width="1">
+    <path d="M816 124v88h177M816 147h177m-177 32h177"/>
+  </g>
+  <path d="M821 197c29-1 38-49 68-57s53 24 99 20" stroke="#f3c868" stroke-width="3" stroke-linecap="round"/>
+  <path d="M821 197c28-1 45-25 70-27s51 17 97 13" stroke="#83ddd6" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 6"/>
+  <text x="808" y="242" class="label">Measure &amp; mitigate</text>
+  <text x="808" y="264" class="caption">Compare execution policies</text>
+
+  <path d="M903 290v14q0 16-16 16H157q-16 0-16-16v-14" stroke="#83ddd6" stroke-width="2" class="flow" marker-end="url(#arrow)"/>
+  <rect x="333" y="306" width="376" height="27" rx="13.5" fill="#142331"/>
+  <text x="521" y="324" text-anchor="middle" class="caption">Feedback: compare policies &amp; update agent rules</text>
+  <text x="1012" y="346" text-anchor="end" fill="#99b8ca" font-size="11">Illustrative curves · not empirical results</text>
+</svg>
