@@ -10,6 +10,13 @@
 </p>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" height="28" alt="Python" />
+  <img src="https://img.shields.io/badge/C%2B%2B-00599C?logo=cplusplus&logoColor=white" height="28" alt="C++" />
+  <img src="https://img.shields.io/badge/Agent_Based_Modeling-287D74" height="28" alt="Agent Based Modeling" />
+  <img src="https://img.shields.io/badge/Financial_Time_Series-526887" height="28" alt="Financial Time Series" />
+</p>
+
+<p align="center">
   <a href="https://yuitokyouni.github.io/myhp/">Website</a> ·
   <a href="https://yuitokyouni.github.io/myhp/abm/">ABM playground</a> ·
   <a href="https://www.linkedin.com/in/yuitokyouni/">LinkedIn</a> ·
