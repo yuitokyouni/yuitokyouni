@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/market-lab.png" alt="A conceptual artificial market: human and robot agents send orders to a limit order book. Amber sell orders sit above mint buy orders on the price axis, separated by the bid–ask spread. Trades produce time series for market-impact analysis." width="1000" />
+  <img src="assets/market-header.svg" alt="Different strategy agents submit buy and sell orders to a limit order book. Amber sell liquidity sits above mint buy liquidity with an empty spread. Trade events produce a price series and conceptual market-impact responses, and market information feeds back into agent decisions." width="1000" />
 </p>
 
 <h1 align="center">Yuito HASEGAWA<br />長谷川結音</h1>
@@ -28,7 +28,7 @@ I study artificial financial markets through **agent-based modeling, C++ order-m
   <img src="assets/research-loop.svg" alt="Research loop: heterogeneous trading agents submit orders to a C++ order book and matching engine; the resulting financial time series inform market-impact analysis and the next simulation experiment." width="1000" />
 </p>
 
-*Amber = sell / ask; mint = buy / bid. Order-book prices increase upward. The illustrations are conceptual; the curves do not represent measured results.*
+*In the order book, amber = sell / ask and mint = buy / bid; prices increase upward. The illustrations are conceptual; the curves do not represent measured results.*
 
 | Theme | What I want to understand |
 | --- | --- |

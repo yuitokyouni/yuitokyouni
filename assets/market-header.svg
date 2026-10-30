@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="500" viewBox="0 0 1440 500" fill="none" role="img" aria-labelledby="market-title market-desc">
+  <title id="market-title">From heterogeneous agents to market dynamics</title>
+  <desc id="market-desc">Different abstract strategy nodes submit buy and sell orders of varying size and frequency. Orders enter a limit order book, with amber sell liquidity above mint buy liquidity and an empty bid–ask spread. Trade events lead to a price series and illustrative market-impact responses. A subtle return path represents market information feeding back into agent decisions. All curves are conceptual, not empirical results.</desc>
+  <defs>
+    <linearGradient id="market-background" x1="0" y1="0" x2="1440" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1D344C"/>
+      <stop offset="1" stop-color="#101E30"/>
+    </linearGradient>
+    <marker id="market-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="m1 1 6 3-6 3" fill="none" stroke="#A4B8C9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <style>
+    .market-orders { --market-dash: -76px; stroke-dasharray: 3 35; stroke-linecap: round; animation: market-flow 6s linear infinite; }
+    .market-orders-slow { --market-dash: -68px; stroke-dasharray: 8 60; animation-duration: 8s; }
+    .market-orders-fast { --market-dash: -52px; stroke-dasharray: 3 23; animation-duration: 4s; }
+    .market-trades { --market-dash: -48px; stroke-dasharray: 2 22; stroke-linecap: round; animation: market-flow 4s linear infinite; }
+    .market-feedback { --market-dash: -26px; stroke-dasharray: 3 10; animation: market-flow 10s linear infinite; }
+    @keyframes market-flow { to { stroke-dashoffset: var(--market-dash); } }
+    @media (prefers-reduced-motion: reduce) {
+      .market-orders, .market-trades, .market-feedback { animation: none; }
+    }
+  </style>
+
+  <g id="market-backdrop">
+    <rect width="1440" height="500" rx="24" fill="url(#market-background)"/>
+    <path d="M32 454H1408" stroke="#31485F" stroke-width="1" opacity=".4"/>
+    <circle cx="202" cy="249" r="188" fill="#33526E" opacity=".11"/>
+  </g>
+
+  <g id="market-information-feedback" stroke="#A4B8C9" stroke-width="1.5" opacity=".48">
+    <path d="M1378 415v18q0 29-29 29H249q-22 0-22-22v-12" class="market-feedback" marker-end="url(#market-arrow)"/>
+  </g>
+
+  <g id="market-agent-network" stroke="#526C84" stroke-width="1.5" opacity=".55">
+    <path d="M112 126 238 96 359 147 324 286 379 394 227 392 94 365 169 248 112 126Z"/>
+    <path d="M238 96 169 248 324 286M169 248 227 392M94 365 324 286" stroke-dasharray="3 7"/>
+  </g>
+
+  <g id="market-order-routes" stroke-width="1.5" opacity=".23">
+    <path d="M268 96C392 65 430 117 542 117M389 147C447 147 464 157 542 157M202 242C345 231 418 197 542 197M142 126C315 134 374 237 542 237" stroke="#E9BA69"/>
+    <path d="M353 286C430 283 467 297 542 297M202 257C350 270 420 337 542 337M259 392C375 392 424 377 542 377M408 394C454 398 493 417 542 417" stroke="#79D9C8"/>
+  </g>
+  <g id="market-sell-order-flow" stroke="#E9BA69" stroke-width="4">
+    <path d="M268 96C392 65 430 117 542 117" class="market-orders market-orders-slow"/>
+    <path d="M389 147C447 147 464 157 542 157" class="market-orders" style="animation-delay:-2s"/>
+    <path d="M202 242C345 231 418 197 542 197" class="market-orders market-orders-fast" style="animation-delay:-1s"/>
+    <path d="M142 126C315 134 374 237 542 237" class="market-orders" style="animation-delay:-4s"/>
+  </g>
+  <g id="market-buy-order-flow" stroke="#79D9C8" stroke-width="4">
+    <path d="M353 286C430 283 467 297 542 297" class="market-orders market-orders-fast"/>
+    <path d="M202 257C350 270 420 337 542 337" class="market-orders" style="animation-delay:-3s"/>
+    <path d="M259 392C375 392 424 377 542 377" class="market-orders market-orders-slow" style="animation-delay:-2s"/>
+    <path d="M408 394C454 398 493 417 542 417" class="market-orders" style="animation-delay:-1s"/>
+  </g>
+
+  <g id="market-agents" stroke="#B5C6D5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <g id="market-agent-trend">
+      <circle cx="112" cy="126" r="32" fill="#263E55"/>
+      <path d="m95 134 10-12 9 5 15-15" stroke="#E0EAF1"/>
+    </g>
+    <g id="market-agent-threshold">
+      <path d="m238 63 33 33-33 33-33-33Z" fill="#304559"/>
+      <path d="M222 103h12V89h18" stroke="#E0EAF1"/>
+    </g>
+    <g id="market-agent-reversion">
+      <rect x="329" y="117" width="60" height="60" rx="17" fill="#263E55"/>
+      <path d="M343 145c8-21 12 25 19 4s10-5 13-5" stroke="#E0EAF1"/>
+    </g>
+    <g id="market-agent-two-sided">
+      <rect x="135" y="214" width="68" height="68" rx="20" fill="#304559"/>
+      <path d="M153 239h23m-15 18h23" stroke="#E0EAF1"/>
+      <circle cx="179" cy="239" r="3" fill="#E0EAF1" stroke="none"/>
+      <circle cx="157" cy="257" r="3" fill="#E0EAF1" stroke="none"/>
+    </g>
+    <g id="market-agent-noise">
+      <circle cx="324" cy="286" r="30" fill="#263E55"/>
+      <path d="m309 289 6-10 6 15 6-18 5 12 7-4" stroke="#E0EAF1"/>
+    </g>
+    <g id="market-agent-schedule">
+      <path d="m94 333 32 32-32 32-32-32Z" fill="#304559"/>
+      <path d="M83 372v-8m11 8v-16m11 16v-12" stroke="#E0EAF1"/>
+    </g>
+    <g id="market-agent-liquidity">
+      <circle cx="227" cy="392" r="32" fill="#263E55"/>
+      <path d="M211 397h32m-27-10h22m-17-10h12" stroke="#E0EAF1"/>
+    </g>
+    <g id="market-agent-adaptive">
+      <path d="m364 368 30 0 15 26-15 26h-30l-15-26Z" fill="#304559"/>
+      <path d="m365 398 8-11 8 11 12-10" stroke="#E0EAF1"/>
+    </g>
+  </g>
+
+  <g id="market-book">
+    <rect x="542" y="66" width="354" height="371" rx="20" fill="#14283B" stroke="#627C92" stroke-width="2"/>
+    <rect x="551" y="75" width="336" height="353" rx="14" stroke="#D7E3EA" stroke-opacity=".07"/>
+    <g id="market-book-grid" stroke="#678096" stroke-width="1" opacity=".21">
+      <path d="M565 117H873M565 157H873M565 197H873M565 237H873M565 297H873M565 337H873M565 377H873M565 417H873"/>
+      <path d="M603 92V426M655 92V426M779 92V426M831 92V426"/>
+    </g>
+    <g id="market-price-ladder" stroke="#9FB5C6" stroke-width="1.5" stroke-linecap="round">
+      <path d="M717 92V426"/>
+      <path d="M712 97H722M712 117H722M712 137H722M712 157H722M712 177H722M712 197H722M712 217H722M712 237H722M712 257H722M712 277H722M712 297H722M712 317H722M712 337H722M712 357H722M712 377H722M712 397H722M712 417H722"/>
+    </g>
+    <g id="market-resting-sells" fill="#E9BA69">
+      <rect x="732" y="108" width="78" height="18" rx="4"/>
+      <rect x="732" y="148" width="132" height="18" rx="4"/>
+      <rect x="732" y="188" width="105" height="18" rx="4"/>
+      <rect x="732" y="228" width="59" height="18" rx="4"/>
+    </g>
+    <g id="market-resting-buys" fill="#79D9C8">
+      <rect x="637" y="288" width="65" height="18" rx="4"/>
+      <rect x="588" y="328" width="114" height="18" rx="4"/>
+      <rect x="617" y="368" width="85" height="18" rx="4"/>
+      <rect x="573" y="408" width="129" height="18" rx="4"/>
+    </g>
+    <g id="market-empty-spread" stroke="#B8C9D5" stroke-width="1" stroke-dasharray="2 7" opacity=".24">
+      <path d="M566 254H868M566 280H868"/>
+    </g>
+  </g>
+
+  <g id="market-trade-events">
+    <path d="M896 264H1007" stroke="#7892A8" stroke-width="1.5" opacity=".5"/>
+    <path d="M896 264H1007" stroke="#E0EAF1" stroke-width="4" class="market-trades"/>
+    <circle cx="972" cy="264" r="15" fill="#233C51" stroke="#B5C6D5" stroke-width="2"/>
+    <path d="m966 264 5 5 8-10" stroke="#E0EAF1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M1007 264q20 0 20-20v-64q0-18 18-18h14" stroke="#A4B8C9" stroke-width="1.5" marker-end="url(#market-arrow)"/>
+    <path d="M1007 264q20 0 20 20v81q0 18 18 18h14" stroke="#A4B8C9" stroke-width="1.5" marker-end="url(#market-arrow)"/>
+  </g>
+
+  <g id="market-price-series">
+    <rect x="1070" y="66" width="324" height="231" rx="18" fill="#14283B" stroke="#627C92" stroke-width="2"/>
+    <g stroke="#678096" stroke-width="1" opacity=".25">
+      <path d="M1092 109H1374M1092 153H1374M1092 197H1374M1092 241H1374"/>
+      <path d="M1140 88V276M1195 88V276M1250 88V276M1305 88V276M1360 88V276"/>
+    </g>
+    <path d="M1092 88V276H1374" stroke="#8FA8BC" stroke-width="1.5"/>
+    <path d="m1098 197 10-10 10 6 10-25 10 12 10-21 10 8 10-33 10 18 10-8 10-30 10 20 10-25 10 32 10-13 10 42 10 37 10-25 10 11 10-28 10 18 10-35 10 20 10-9 10 18 10-14 10 7 10-12" stroke="#8BE1D3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <g fill="#7892A8" opacity=".55">
+      <path d="M1098 262h6v13h-6zM1110 256h6v19h-6zM1122 264h6v11h-6zM1134 248h6v27h-6zM1146 253h6v22h-6zM1158 258h6v17h-6zM1170 244h6v31h-6zM1182 251h6v24h-6zM1194 257h6v18h-6zM1206 241h6v34h-6zM1218 252h6v23h-6zM1230 246h6v29h-6zM1242 255h6v20h-6zM1254 236h6v39h-6zM1266 231h6v44h-6zM1278 243h6v32h-6zM1290 249h6v26h-6zM1302 252h6v23h-6zM1314 244h6v31h-6zM1326 255h6v20h-6zM1338 260h6v15h-6zM1350 253h6v22h-6zM1362 258h6v17h-6z"/>
+    </g>
+  </g>
+
+  <g id="market-impact-responses">
+    <rect x="1070" y="317" width="324" height="120" rx="18" fill="#14283B" stroke="#627C92" stroke-width="2"/>
+    <g stroke="#678096" stroke-width="1" opacity=".25">
+      <path d="M1092 357H1374M1092 386H1374M1175 337V416M1250 337V416M1325 337V416"/>
+    </g>
+    <path d="M1092 336V416H1374" stroke="#8FA8BC" stroke-width="1.5"/>
+    <path d="M1098 409C1120 409 1133 343 1158 342S1207 377 1246 386 1331 401 1372 402" stroke="#E0EAF1" stroke-width="3" stroke-linecap="round"/>
+    <path d="M1098 409C1122 409 1139 377 1162 377S1214 394 1254 400 1335 409 1372 409" stroke="#8AAACC" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 6"/>
+  </g>
+</svg>
